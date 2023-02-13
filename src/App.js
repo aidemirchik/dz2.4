@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useState } from 'react'
 
-function App() {
+const App = () => {
+  const [name, setName] = useState("вы успешно зарегестрировались")
+  const [lastName, setLastName] = useState("вы успешно зарегестрировались")
+  const [email, setEmail] = useState("вы успешно зарегестрировались")
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<div className='qwe'>
+        <p className='blkk'> рег {name}</p>
+        <p className='paa'>   зарегистрирван: {lastName}  </p>
+        <div className="input">
+
+            
+            <input type="text" placeholder='First Name' />
+            <br></br>
+            <input type="text" placeholder='Last Name' />
+            <br></br>
+            <input type="text" onChange={(event) => setEmail(event.target.value)} placeholder='Email' />
+            <br></br>
+            <button onClick={() => setLastName(lastName + email) } className='btn'>Register</button>
+            <button onClick={() => setName(lastName + email) } className='btn'>Register</button>
+
+        </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
